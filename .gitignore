@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+
+# Pytest
+.pytest_cache/
+
+# Ruff
+.ruff_cache/
+
+# Arquivos de cache
+CACHEDIR.TAG
+
+# Banco de dados local
+medications.json
+
+# VS Code (opcional)
+.vscode/
