@@ -3,7 +3,7 @@
 ## Descrição do Problema
 Muitas pessoas, especialmente idosos ou pacientes em tratamento contínuo, enfrentam dificuldades para lembrar de tomar seus medicamentos nos horários corretos. Isso pode comprometer a eficácia do tratamento e causar riscos à saúde.
   
-## Solução do Problema
+## Proposta da solução
 Sistema simples que permite registrar medicamentos, horários e acompanhar se foram tomados.
 
 ## Público-alvo
