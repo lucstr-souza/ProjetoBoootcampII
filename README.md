@@ -16,6 +16,7 @@ Sistema simples que permite registrar medicamentos, horários e acompanhar se fo
 - Adicionar medicamento
 - Listar medicamentos
 - Marcar medicamento como tomado
+- Consultar CEP dos pacientes
 
 ## Tecnologias
 - Python 3.13
@@ -24,34 +25,46 @@ Sistema simples que permite registrar medicamentos, horários e acompanhar se fo
 - Git e GitHub
 - GitHub Actions
 
-## Instalação
+## Como executar o projeto
+
+### Pré-requisitos
+- Python 3.9 ou superior instalado
+- Git instalado
+
+### Instalação
+
 ```bash
-# 1. Clonar repositório
-git clone https://github.com/SEU-USUARIO/medireminder.git
-cd medireminder
+# 1. Clone o repositório
+git clone https://github.com/lucstr-souza/ProjetoBoootcampII.git
+cd ProjetoBoootcampII
 
-# 2. Crie e ative o ambiente virtual
-python -m venv .venv
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # Linux/Mac
+# 2. Instale as dependências
+pip install -r requisitos.txt
 
-# 3. Instalar dependências
-pip install -r requirements.txt
-
-# 4. Execução da aplicação
+# 3. Execute a aplicação
 python -m src.main
+```
 
-# 5. Executar testes
-python -m pytest
+### Funcionalidades disponíveis
+- `1` — Adicionar medicamento
+- `2` — Listar medicamentos
+- `3` — Marcar medicamento como tomado
+- `4` — Consultar CEP do paciente (integração com API ViaCEP)
+- `5` — Sair
 
-# 6. Executar Lint
-python -m ruff check .
+### Executar os testes
+```bash
+pytest testes/
+```
 
-# Versão
-1.0.0
+### Executar o lint
+```bash
+ruff check .
+```
 
-# Autor
-Luisa Castro Souza - github.com/lucstr-souza
+### Integração com API ViaCEP
+A opção 4 do menu consulta a API pública [ViaCEP](https://viacep.com.br) 
+e retorna o endereço completo a partir de um CEP informado.
+Exemplo de uso: digite `01310100` e receba os dados de localização do paciente.
 
-# Repositório
-https://github.com/lucstr-souza/ProjetoBoootcampII.git
+---
