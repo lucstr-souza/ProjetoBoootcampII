@@ -31,4 +31,13 @@ while True:
             print("Não encontrado")
 
     elif opcao == "4":
+        cep = input("Digite o CEP do paciente (somente números): ")
+        dados = consultar_cep(cep)
+        if dados:
+            print("\n  Endereço encontrado:")
+            print(f"  {formatar_endereco(dados)}")
+        else:
+            print("  CEP não encontrado ou inválido.")
+
+    elif opcao == "5":
         break
