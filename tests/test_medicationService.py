@@ -11,7 +11,7 @@ from src.medicationService import (
 
 class TestAdicionarMedicamento(unittest.TestCase):
 
-    @patch("src.storage.get_client")
+    @patch("src.armazenamento.get_client")
     def test_adiciona_medicamento_valido(self, mock_client):
         """Medicamento válido deve ser adicionado com sucesso."""
         mock_table = MagicMock()
@@ -35,7 +35,7 @@ class TestAdicionarMedicamento(unittest.TestCase):
 
 class TestListarMedicamentos(unittest.TestCase):
 
-    @patch("src.storage.get_client")
+    @patch("src.armazenamento.get_client")
     def test_lista_medicamentos(self, mock_client):
         """Deve retornar lista de medicamentos do banco."""
         mock_data = [
@@ -50,7 +50,7 @@ class TestListarMedicamentos(unittest.TestCase):
         self.assertEqual(len(resultado), 2)
         self.assertEqual(resultado[0]["nome"], "Paracetamol")
 
-    @patch("src.storage.get_client")
+    @patch("src.armazenamento.get_client")
     def test_lista_vazia(self, mock_client):
         """Deve retornar lista vazia quando não há medicamentos."""
         mock_client.return_value.table.return_value\
@@ -63,7 +63,7 @@ class TestListarMedicamentos(unittest.TestCase):
 
 class TestMarcarComoTomado(unittest.TestCase):
 
-    @patch("src.storage.get_client")
+    @patch("src.armazenamento.get_client")
     def test_marca_medicamento_existente(self, mock_client):
         """Medicamento existente deve ser marcado como tomado."""
         mock_data = [{"nome": "Paracetamol", "horario": "08:00", "tomado": False}]
@@ -77,7 +77,7 @@ class TestMarcarComoTomado(unittest.TestCase):
         resultado = marcar_como_tomado("Paracetamol")
         self.assertTrue(resultado)
 
-    @patch("src.storage.get_client")
+    @patch("src.armazenamento.get_client")
     def test_marca_medicamento_inexistente(self, mock_client):
         """Medicamento inexistente deve retornar False."""
         mock_client.return_value.table.return_value\
