@@ -1,2 +1,3 @@
-ruff
+supabase
 pytest
+ruff
