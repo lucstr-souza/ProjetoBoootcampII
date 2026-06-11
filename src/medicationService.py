@@ -1,6 +1,6 @@
 """Serviço de medicamentos usando Supabase."""
 
-from src.storage import load_data, inserir_medicamento, marcar_tomado_db
+from storage import load_data, inserir_medicamento, marcar_tomado_db
 
 def adicionar_medicamento(nome, horario):
     """Adiciona um medicamento no banco de dados."""
